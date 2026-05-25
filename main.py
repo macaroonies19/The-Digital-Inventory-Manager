@@ -7,10 +7,46 @@ class Product:
 
   def update_stock(self, amount):
     self.amount = amount
-    if amount = 
+    while True:
+     if amount < 0:
+      stock_debt = amount
+      print("{stock_debt} products added to stock to fix negaive stock.")
+      amount = 0
+      print("Stock is now 0.")
 
-  def get_total_value():
+     stock_answer = int(input("Do you want to add stock [1] or decrease stock [2]" ))
+     if stock_answer == 1:
+      stock_add = int(input("How much stock do you want to add? "))
+      amount = amount + stock_add
+      print("Stock added successfully.")
     
+     if stock_answer == 2:
+      stock_minus = int(input("How much stock do you want to minus? "))
+      amount = amount - stock_minus
+      print("Stock minused successfully.")
 
+     else:
+      print("Please enter a number.")
+
+  def get_total_value(self, price, quantity):
+    total_value = price * quantity
+    return total_value
+    
   def __str__(self):
     return f"{self.product_id} {self.name} {self.price} {self.quantity}"
+
+class Inventory:
+    def __init__(self):
+        self.products = {} # Maps product_id -> Product object
+
+    def add_product(self, product):
+        # TODO: Add to dictionary
+        pass
+
+    def display_all(self):
+        # TODO: Iterate and print
+        pass
+
+if __name__ == "__main__": # research what __main__ and __name__ actually does!
+    # TODO: Write a while loop to interact with user 
+    print("Welcome to the Inventory Manager")
