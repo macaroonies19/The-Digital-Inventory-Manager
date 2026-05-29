@@ -10,7 +10,7 @@ class Product:
     while True:
      if amount < 0:
       stock_debt = amount
-      print("{stock_debt} products added to stock to fix negaive stock.")
+      print("{stock_debt} products added to stock to fix negative stock.")
       amount = 0
       print("Stock is now 0.")
 
