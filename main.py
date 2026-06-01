@@ -40,10 +40,16 @@ class Inventory:
         self.products = {} # Maps product_id -> Product object
 
     def add_product(self, product):
+        self.products[product.product_id] = product
         # TODO: Add to dictionary
-        pass
+    def restock(product_id, amount, self):
+      self.products[product_id].stock_add(amount)
+
+    def sell_product(self, product_id, amount):
+      self.products[product_id].stock_minus(-amount)
 
     def display_all(self):
+        
         # TODO: Iterate and print
         pass
 
