@@ -33,7 +33,7 @@ class Product:
     return total_value
     
   def __str__(self):
-    return f"{self.product_id} {self.name} {self.price} {self.quantity}"
+    return f"{self.product_id} | {self.name} | ${self.price} | {self.quantity}"
 
 class Inventory:
     def __init__(self):
@@ -49,10 +49,29 @@ class Inventory:
       self.products[product_id].stock_minus(-amount)
 
     def display_all(self):
-        
+        return f"{self.products} | {self.name} | ${self.price} | {self.quantity}"
         # TODO: Iterate and print
-        pass
 
 if __name__ == "__main__": # research what __main__ and __name__ actually does!
     # TODO: Write a while loop to interact with user 
+  while True:
     print("Welcome to the Inventory Manager")
+    print("1. Add New Product")
+    print("2. View All Inventory")
+    print("3. Update Product Stock (Buy/Sell)")
+    print("4. Exit")
+    choice = int(input("Select 1-4: "))
+    if choice == 1:
+      Inventory.add_product()
+
+    if choice == 2:
+      Inventory.display_all()
+    
+    if choice == 3:
+      Product.update_stock()
+
+    if choice == 4:
+      break
+
+    else:
+      print("Invalid choice")
